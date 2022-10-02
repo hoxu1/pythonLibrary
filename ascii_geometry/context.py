@@ -1,20 +1,24 @@
-class ascii_context:
+class AsciiContext:
     """
-    Instantiate ascii Geometry object.
-    Different mathematical shapes can be drawn with a given symbol
+    Context class for drawing ascii shapes.
+    Different mathematical shapes can be constructed with a given symbol.
 
-    Parameters
+    Attributes
     ----------
     symbol : char
         Symbol used for drawing.
+
+    Methods
+    -------
+    get_triangle(height)
     """
 
     def __init__(self, symbol):
         self.symbol = symbol
 
-    def triangle(self, height):
+    def get_triangle(self, height):
         """
-        Prints ascii tirangle.
+        Returns ascii tirangle.
 
         Parameters
         ----------
@@ -23,11 +27,11 @@ class ascii_context:
 
         Returns
         -------
-        void
+        string
 
         Examples
         --------
-        >>> triangle(15)
+        >>> self.get_triangle(15)
                       #
                      ###
                     #####
@@ -44,5 +48,9 @@ class ascii_context:
          ###########################
         #############################
         """
+        shape = ''
+
         for i in range(height):
-            print((height - i - 1) * " " + (2*(i + 1) - 1) * "#" + (height - i - 1) * " ")
+            shape += (height - i - 1) * " " + (2*(i + 1) - 1) * self.symbol + (height - i - 1) * " " + '\n'
+
+        return shape

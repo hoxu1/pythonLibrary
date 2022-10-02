@@ -1,5 +1,5 @@
-from ascii_geometry import ascii_context
+from ascii_geometry import AsciiContext
 
 if __name__ == '__main__':
-    obj = ascii_context('*')
-    obj.triangle(10)
+    ctx = AsciiContext('0')
+    print(ctx.get_triangle(10))
