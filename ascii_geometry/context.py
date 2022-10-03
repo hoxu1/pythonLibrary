@@ -13,6 +13,8 @@ class AsciiContext:
     get_triangle(height)
     """
 
+
+
     def __init__(self, symbol):
         self.symbol = symbol
 
